@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPU Campus Navigator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Campus Navigator home">
+      <span class="brand-mark">L</span>
+      <span><strong>Campus Navigator</strong><small>LPU · Student project demo</small></span>
+    </a>
+    <nav><a href="#find-route">Find a route</a><a href="https://iviewd.com/lpu2/" target="_blank" rel="noopener noreferrer">360° Campus Tour ↗</a><a href="#how-it-works">How it works</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">CAMPUS WAYFINDING MADE SIMPLE</span>
+        <h1>Lost on campus?<br><span>Find your way.</span></h1>
+        <p>Choose a destination to see a simple route guide, landmarks and helpful directions.</p>
+        <a class="button button-light" href="#find-route">Find my route <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="map-card live-map-card">
+          <div class="map-top"><span>LPU CAMPUS MAP LOOKUP</span><span class="map-dot"></span></div>
+          <iframe title="Lovely Professional University map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?hl=en&q=Lovely%20Professional%20University%2C%20Phagwara%2C%20Punjab&t=k&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+          <p class="map-note">Campus-centred satellite view. Select a destination below and open walking directions in Google Maps.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice" role="note">
+      <span class="notice-icon">!</span>
+      <p><strong>Student prototype:</strong> The embedded map opens a live Google Maps view of LPU. Exact internal Block 34 paths, building pins and walking directions depend on map coverage and must be confirmed on campus. This is a student prototype, not an official LPU navigation service.</p>
+    </section>
+
+    <section class="route-section" id="find-route">
+      <div class="section-heading">
+        <span class="eyebrow">QUICK SEARCH</span>
+        <h2>Where do you want to go?</h2>
+        <p>Select a starting point and any block, facility or sports ground inside Lovely Professional University.</p>
+      </div>
+      <div class="search-panel live-search-panel">
+        <label for="startSearch">Starting point (inside LPU)</label>
+        <div class="search-row"><input id="startSearch" type="text" value="LPU Main Gate" list="campusPlaces" placeholder="e.g. LPU Main Gate" aria-label="Starting point inside LPU campus"></div>
+        <label for="destinationSearch" style="margin-top:14px">Destination (inside LPU)</label>
+        <div class="search-row">
+          <input id="destinationSearch" type="text" value="Block 34" list="campusPlaces" aria-label="Search destination inside LPU campus" placeholder="e.g. Block 34, Central Library, Sports Ground" />
+          <button class="button" id="findButton" type="button">Find campus route</button>
+        </div>
+        <datalist id="campusPlaces">
+          <option value="LPU Main Gate"><option value="Block 1"><option value="Block 2"><option value="Block 3"><option value="Block 4"><option value="Block 5"><option value="Block 6"><option value="Block 7"><option value="Block 8"><option value="Block 9"><option value="Block 10"><option value="Block 11"><option value="Block 12"><option value="Block 13"><option value="Block 14"><option value="Block 15"><option value="Block 16"><option value="Block 17"><option value="Block 18"><option value="Block 19"><option value="Block 20"><option value="Block 21"><option value="Block 22"><option value="Block 23"><option value="Block 24"><option value="Block 25"><option value="Block 26"><option value="Block 27"><option value="Block 28"><option value="Block 29"><option value="Block 30"><option value="Block 31"><option value="Block 32"><option value="Block 33"><option value="Block 34"><option value="Block 35"><option value="Block 36"><option value="Central Library"><option value="Uni Mall"><option value="Uni-Mall"><option value="Unipolis"><option value="Student Activity Center"><option value="Food Court"><option value="Auditorium"><option value="Indoor Sports Complex"><option value="Sports Ground"><option value="Outdoor Play Ground"><option value="Cricket Ground"><option value="Football Ground"><option value="Basketball Court"><option value="Hostel"><option value="University Hospital"><option value="Shanti Devi Mittal Auditorium"><option value="Baldev Raj Mittal Unipolis">
+        </datalist>
+        <p class="field-help">Choose any campus block, hostel, library, facility or sports ground. Suggestions are a convenience list, not a verified official directory. External destinations are rejected.</p>
+      </div>
+
+      <div class="route-results live-results" id="routeResults" aria-live="polite">
+        <div class="route-title">
+          <div><span class="eyebrow">LIVE MAP SEARCH</span><h3 id="routeName">Block 34 · Lovely Professional University</h3></div>
+          <span class="time-pill">Map coverage varies</span>
+        </div>
+        <div class="live-map-frame">
+          <iframe id="destinationMap" title="LPU campus overview map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?hl=en&q=Lovely%20Professional%20University%2C%20Phagwara%2C%20Punjab&t=k&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+        <div class="live-actions">
+          <a class="button" id="directionsLink" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&origin=Lovely+Professional+University,+Phagwara&destination=Block+34,+Lovely+Professional+University+campus,+Phagwara&travelmode=walking">Open directions in Google Maps ↗</a>
+          <a class="text-link" id="searchLink" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Block+34+inside+Lovely+Professional+University+campus,+Phagwara">Open map search ↗</a>
+        </div>
+        <div class="tip"><strong>Important</strong><p>Searches are anchored to Lovely Professional University, Phagwara, and walking directions start from the LPU campus. Google Maps may still lack verified internal paths or exact block pins. Confirm the route with campus signs or staff.</p></div>
+      </div>
+    </section>
+
+    <section class="tour-section" id="campus-tour">
+      <div class="tour-copy">
+        <span class="eyebrow">EXPLORE BEFORE YOU WALK</span>
+        <h2>Explore LPU in 360°</h2>
+        <p>Take a virtual look around Lovely Professional University’s campus, then use the campus-only route search to find your destination.</p>
+        <a class="button" href="https://iviewd.com/lpu2/" target="_blank" rel="noopener noreferrer">Open LPU 360° Campus Tour ↗</a>
+        <p class="field-help">This button opens the requested LPU 360° tour in a new tab. The tour is for visual exploration, not turn-by-turn route guidance.</p>
+      </div>
+      <div class="tour-icon" aria-hidden="true">360°</div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading">
+        <span class="eyebrow">SIMPLE STEPS</span>
+        <h2>How it works</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature"><span class="feature-number">01</span><h3>Choose a place</h3><p>Select a block or landmark from the destination list.</p></article>
+        <article class="feature"><span class="feature-number">02</span><h3>Check the route</h3><p>Open a live map search and check the available directions.</p></article>
+        <article class="feature"><span class="feature-number">03</span><h3>Follow signs</h3><p>Confirm internal block locations with campus signs or staff.</p></article>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <div><span class="eyebrow">HELP US IMPROVE</span><h2>Was this route guide easy to understand?</h2><p>Your feedback can help us improve the student prototype.</p></div>
+      <div class="feedback-actions">
+        <button class="feedback-button" data-feedback="Yes, it was easy">👍 Yes</button>
+        <button class="feedback-button" data-feedback="It needs improvement">🛠 Needs improvement</button>
+      </div>
+      <p class="feedback-message" id="feedbackMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer><span>Campus Navigator · INT335 Design Thinking project</span><span>LPU campus-only map lookup + 360° tour · student prototype</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
